@@ -17,25 +17,7 @@ const bgImage = require("../assets/background1.png");
 const appIcon = require("../assets/appIcon.png");
 
 export default class LoginScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: ""
-    };
-  }
-
-  handleLogin = (email, password) => {
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        this.props.navigation.navigate("BottomTab");
-      })
-      .catch(error => {
-        Alert.alert(error.message);
-      });
-  };
+  //passo 1
 
   render() {
     const { email, password } = this.state;
